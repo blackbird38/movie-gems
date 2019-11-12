@@ -1,0 +1,10 @@
+.idea
+node_modules/
+assets/
+design/
+dist/img/
+dist/app.bundle.js
+dist/app.bundle.js.map
+dist/app.css
+dist/app.css.map
+

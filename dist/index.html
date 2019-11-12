@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Gems</title>
+    <link rel="stylesheet" href="./app.css">
+    
+ <!--   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="./node_modules/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" href="style.css" />-->
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.min.css"/>
+    <script src="https://kit.fontawesome.com/01647a0360.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="90">
+
+              
+    <div class="ml-0 mr-0 container-fluid text-left">
+            <div class="row navbar-row  shadow-sm wave-inverse">
+                    <!--navbar-->
+                    <!-- As a heading -->
+                    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="navbar"> 
+                            <span class="navbar-brand mb-0 h1 text-light"><h1>Movie Gems</h1></span> 
+                            <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                              Search
+                                            </a>
+                                            <div class="dropdown-menu">
+                                              <a class="dropdown-item" href="#nav-tab">Movies</a>
+                                              <a class="dropdown-item" href="#nav-tab">TV Series</a>
+                                            </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                              Movies
+                                            </a>
+                                            <div class="dropdown-menu">
+                                              <a class="dropdown-item" href="#submenu-now-playing-movies">Now playing</a>
+                                              <a class="dropdown-item" href="#submenu-upcoming-movies">Upcoming</a>
+                                              <a class="dropdown-item" href="#submenu-popular-movies">Popular</a>
+                                              <a class="dropdown-item" href="#submenu-top-rated-movies">Top rated</a>
+                                            </div>
+                                          </li>
+                                          <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                                  TV Shows
+                                                </a>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="#submenu-popular-tv-shows">Popular</a>
+                                                  <a class="dropdown-item" href="#submenu-top-rated-tv-shows">Top Rated</a>
+                                                  <a class="dropdown-item" href="#submenu-on-tv-tv-shows">On TV</a>
+                                                  <a class="dropdown-item" href="#submenu-airing-today-tv-shows">Airing Today</a>
+                                                </div>
+                                              </li>
+                                              <li class="nav-item">
+                                                    <a class="nav-link" href="#menu-people">People</a>
+                                            </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#section1"></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#section2"></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#section3"></a>
+                              </li>
+
+                            </ul>
+                          </nav>
+                   
+                </div>
+
+        <div class="row mx-5 px-5 search-row ">
+        <!--search bar-->
+            <div class="col-md-12 ">
+            <form action="#" class="col-md-12 form-inline" id="search-movie-form">
+                    <input id="search-movie-bar" type="text" name="search" placeholder="Search movie gems...">
+            </form>
+            </div>
+        </div>
+        
+        <!--search result-->
+        <div class="row row mx-5 px-5 searched-movie-list-row text-left">
+            <div class="col-md-11">
+                <ul id="searched-movie-list" class="list-group row" style="list-style: none;"></ul>
+            </div>
+        </div>
+
+        <!--Playing now carousel-->
+            <div class="row mx-5 px-5">
+                <h3>In theaters</h3>
+                <div class="col-md-12 playing-now-autoplay" id="playing-now-list-autoplay" style="padding: 4px; color:dimgrey" >
+                </div>
+            </div>
+        
+         <!--Upcoming carousel-->
+            <div class="row mx-5 px-5">
+                <h3>Upcoming</h3>
+                <div class="col-md-12 upcoming-autoplay" id="upcoming-list-autoplay" style="padding: 4px; color:dimgrey" >
+                </div>
+            </div>
+
+
+        <!--Popular Movies carousel-->
+        <div class="row mx-5 px-5">
+            <h3>Popular Movies</h3>
+                <div class="col-md-12 popular-movies-autoplay" id="popular-movies-list-autoplay" style="padding: 4px; color:dimgrey" >
+
+
+        </div>
+
+    </div>
+
+
+        <!--Movie info-->
+        
+            <div class="row" id="info-movie-box" style="display:none">
+                
+                   
+            </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12" >
+                <ul id="popular-movie-list" class="row" style="list-style: none;"></ul>
+            </div>
+        </div>
+        <div class="row wave-container mb-0">
+            <div class="col-md-12 wave img-fluid" >
+                
+            </div>
+            <div class="col-md-12 bg-purple px-5">
+                <nav class="bg-purple p-5">
+                    <div class="nav nav-tabs bg-purple" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-movies-tab" data-toggle="tab" href="#nav-movies" role="tab" aria-controls="nav-home" aria-selected="true">Search Movies</a>
+                      <a class="nav-item nav-link" id="nav-tv-shows-tab" data-toggle="tab" href="#nav-tv-shows" role="tab" aria-controls="nav-profile" aria-selected="false">Search TV Shows</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content bg-purple px-5" id="nav-tabContent">
+                    <div class="tab-pane fade show active px-5" id="nav-movies" role="tabpanel" aria-labelledby="nav-movies-tab">
+                            <form id="m-search-movies-form">
+                                    <div class="form-group container">
+                                      <div class="row">
+                                        <div class="col-sm">
+                                        <label  for="year">Year: </label>
+                                        <div class="dropdown">
+                                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dd-btn-search-movie-year">Select year</button>
+                                                <div class="dropdown-menu scrollable-menu" id="dd-menu-search-movie-year">
+                                                </div>
+                                          </div> 
+                                          </div>
+                                          <div class="col-sm">
+                                              <label for="sort-by">Sort by</label>
+                                              <div class="dropdown">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dd-btn-search-movie-sort-by">
+                                                      Select sorting criteria
+                                                    </button>
+                                                    <div class="dropdown-menu" id="dd-menu-search-movie-sortby">
+                                                      <a class="dropdown-item" id="data-pop_desc" href="">Popularity Descending</a>
+                                                      <a class="dropdown-item" id="data-pop_asc" href="#">Popularity Ascending</a>
+                                                      <a class="dropdown-item" id="data-voteavg_desc" href="#">Rating Descending</a>
+                                                      <a class="dropdown-item" id="data-voteavg_asc" href="#">Rating Ascending</a>
+                                                      <a class="dropdown-item" id="data-reldate_desc" href="#">Release Date Descending</a>
+                                                      <a class="dropdown-item" id="data-reldate_asc" href="#">Release Date Ascending</a>
+                                                      <a class="dropdown-item" id="data-origtitle_asc" href="#">Title(A-Z)</a>
+                                                      <a class="dropdown-item" id="data-origtitle_desc" href="#">Title(Z-A)</a>                                              
+                                                    </div>
+                                              </div> 
+                                          </div>
+                                          <div class="col-sm">
+                                              <label for="genres">Genres</label>
+                                              <select id="genres" class="selectpicker" multiple data-live-search="true" data-style="btn-primary" data-size="5" multiple data-actions-box="true" title="Select genres...">
+                                                <!--https://developer.snapappointments.com/bootstrap-select/examples/-->
+
+                                              </select>
+
+                                          </div>
+                                          <div class="col-sm">
+                                              <label for="keywords">Keywords</label>
+                                              <input type="text" class="form-control" id="keywords" placeholder="Keywords">
+                                          </div>
+                                      </div>
+
+
+                                    </div>
+
+                                    <div class="hidden m-3" id="movie-search-pagination"></div>
+                                    <div id="submenu-search-movies-display"></div>
+                                    
+                                  </form>
+                        
+                    </div>
+                    <div class="tab-pane fade" id="nav-tv-shows" role="tabpanel" aria-labelledby="nav-tv-shows-tab">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+
+                  </div>
+            </div>   
+
+
+            <div class="col-md-12 wave-inverse img-fluid" >
+                
+            </div>
+        </div>
+
+    </div>
+
+
+        <div id="submenu-now-playing-movies" class="container-fluid bg-black" style="padding-top:70px;padding-bottom:70px">
+                <h1>Movies > Now Playing </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+              <div id="submenu-upcoming-movies" class="container-fluid bg-black" style="padding-top:70px;padding-bottom:70px">
+                <h1>Movies > Upcoming</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div id="submenu-popular-movies" class="container-fluid bg-purple" style="padding-top:70px;padding-bottom:70px">
+                    <h1>Movies > Popular</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                  <div id="submenu-top-rated-movies" class="container-fluid bg-black" style="padding-top:70px;padding-bottom:70px">
+                    <h1>Movies > Top Rated</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+          
+                <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#submenu-popular-tv-shows">Popular</a>
+                        <a class="dropdown-item" href="#submenu-top-rated-tv-shows">Top Rated</a>
+                        <a class="dropdown-item" href="#submenu-on-tv-tv-shows">On TV</a>
+                        <a class="dropdown-item" href="#submenu-airing-today-tv-shows">Airing Today</a>
+                      </div>
+        <div id="submenu-popular-tv-shows" class="container-fluid bg-purple" style="padding-top:70px;padding-bottom:70px">
+            <h1>TV Shows > Popular</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+          <div id="submenu-top-rated-tv-shows" class="container-fluid bg-black" style="padding-top:70px;padding-bottom:70px">
+            <h1>TV Shows > Top Rated</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div id="submenu-on-tv-tv-shows" class="container-fluid bg-purple" style="padding-top:70px;padding-bottom:70px">
+                <h1>TV Shows > On TV</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+              <div id="submenu-airing-today-tv-shows" class="container-fluid bg-black" style="padding-top:70px;padding-bottom:70px">
+                <h1>TV Shows > Airing Today</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        <div id="menu-people" class="container-fluid bg-purple" style="padding-top:70px;padding-bottom:70px">
+                <h1>People</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
+         </div>
+          
+    <!--
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/slick-carousel/slick/slick.min.js"></script>-->
+    <a id="back-to-top-button">UP</a>
+    <script src="./app.bundle.js"></script>
+</body>
+</html>
