@@ -5,4 +5,4 @@
 http://localhost:8080/
 
 demo:
-https://movie-gems.firebaseapp.com/
+firefox://movie-gems.firebaseapp.com/
